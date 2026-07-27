@@ -1,3 +1,32 @@
+server:
+    port: 8090
+
 spring:
-  application:
-    name: microservice-course
+    application:
+        name: msvc-course
+
+    datasource:
+        driver-class-name: org.postgresql.Driver
+        url: jdbc:postgresql://localhost:5432/coursedb
+        username: postgres
+        password: postgres
+
+    jpa:
+        hibernate:
+            ddl-auto: update
+        database: postgresql
+
+        database-platform: org.hibernate.dialect.PostgreSQLDialect
+    ## Esta configuracion es temporal, ya que se debe configurar un config server 
+    ## para que el microservicio pueda obtener la configuracion de manera centralizada
+    config:
+        import: optional:configserver:http://localhost:8888 
+
+## Esto sirve para que eureka pueda encontrar el microservicio course, ya que se debe registrar en el eureka server            
+eureka:
+    instance:
+        hostname: localhost
+
+    client:
+        service-url:
+            defaultZone: http://localhost:8761/eureka/
