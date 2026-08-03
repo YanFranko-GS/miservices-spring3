@@ -8,7 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/students")
+@RequestMapping("/api/student")
 public class StudentController {
 
     @Autowired
@@ -29,5 +29,12 @@ public class StudentController {
     @GetMapping("/search/{id}")
     public ResponseEntity<?> finById(@PathVariable Long id){
         return ResponseEntity.ok(studentService.findById(id));
+    }
+
+
+    // Este endpoint me va a permitir consumir mi microservice de curso
+    @GetMapping("/search-ny-course/{idCourse}")
+    public ResponseEntity<?> findByIdCourse(@PathVariable Long idCourse){
+        return ResponseEntity.ok(studentService.findByIdCourse(idCourse));
     }
 }
