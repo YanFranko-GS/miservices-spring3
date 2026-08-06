@@ -1,1 +1,1 @@
-## Hola Aqui se estara actualizando cada configuarios de los modulos de mi Microservices
+## Hola Aqui se estara actualizando cada configuracion de los modulos de mi Microservices
