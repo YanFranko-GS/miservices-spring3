@@ -33,7 +33,7 @@ public class StudentController {
 
 
     // Este endpoint me va a permitir consumir mi microservice de curso
-    @GetMapping("/search-ny-course/{idCourse}")
+    @GetMapping("/search-by-course/{idCourse}")
     public ResponseEntity<?> findByIdCourse(@PathVariable Long idCourse){
         return ResponseEntity.ok(studentService.findByIdCourse(idCourse));
     }
