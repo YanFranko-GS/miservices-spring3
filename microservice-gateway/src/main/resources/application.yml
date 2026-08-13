@@ -2,9 +2,8 @@
 ## de la base de datos y demas, solo necesitamos que el microservicio student se conecte al config server
 ## para obtener la configuracion de manera centralizada
 spring:
-    application:
-        name: msvc-eureka
-    config:
-        import: optional:configserver:http://localhost:8888
-
+  application:
+    name: msvc-gateway
+  config:
+    import: "optional:configserver:http://localhost:8888"
 
