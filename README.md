@@ -1,4 +1,4 @@
-<![CDATA[<div align="center">
+
 
 # 🚀 Spring Microservices
 
@@ -14,7 +14,6 @@
 
 Sistema distribuido de gestión académica que implementa el patrón de **microservicios** para administrar **Cursos** y **Estudiantes**, con configuración centralizada, service discovery y un API Gateway como punto de entrada único.
 
-</div>
 
 ---
 
@@ -709,9 +708,6 @@ Este proyecto es de uso educativo y personal.
 
 ---
 
-<div align="center">
+
 
 **Desarrollado por [YanFranko-GS](https://github.com/YanFranko-GS)** 🚀
-
-</div>
-]]>
