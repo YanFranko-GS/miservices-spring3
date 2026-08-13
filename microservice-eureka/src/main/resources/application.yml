@@ -1,22 +1,10 @@
-server:
-  port: 8761
-
+## Se borra todo lo demas y dejamos solo eso ya que en el "Config Server" ya tenemos toda la configuracion
+## de la base de datos y demas, solo necesitamos que el microservicio student se conecte al config server
+## para obtener la configuracion de manera centralizada
 spring:
     application:
-        name: msvc-server
-    ## Esta configuracion es temporal, ya que se debe configurar un config server 
-    ## para que el microservicio pueda obtener la configuracion de manera centralizada
+        name: msvc-eureka
     config:
         import: optional:configserver:http://localhost:8888
 
-eureka:
-    instance:
-        hostname: localhost
-    
-    client:
-        ## esta configuracion se registra asi mismo por defecto, pero como es "false" no se registra en el eureka server
-        register-with-eureka: false
-        fetch-registry: false
-        service-url:
-            defaultZone: http://localhost:${server.port}/eureka/
 
