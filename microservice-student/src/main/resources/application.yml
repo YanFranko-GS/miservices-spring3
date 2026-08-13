@@ -1,32 +1,8 @@
-server:
-    port: 8090
-
+# Se borra todo lo demas y dejamos solo eso ya que en el "Config Server" ya tenemos toda la configuracion
+# de la base de datos y demas, solo necesitamos que el microservicio student se conecte al config server
+# para obtener la configuracion de manera centralizada
 spring:
     application:
         name: msvc-student
-
-    datasource:
-        driver-class-name: com.mysql.cj.jdbc.Driver
-        url: jdbc:mysql://localhost:3306/studentdb
-        username: root
-        password: root
-
-    jpa:
-        hibernate:
-            ddl-auto: update
-        database: mysql
-
-        database-platform: org.hibernate.dialect.MySQLDialect
-    ## Esta configuracion es temporal, ya que se debe configurar un config server 
-    ## para que el microservicio pueda obtener la configuracion de manera centralizada
     config:
         import: optional:configserver:http://localhost:8888 
-
-## Esto sirve para que eureka pueda encontrar el microservicio student, ya que se debe registrar en el eureka server            
-eureka:
-    instance:
-        hostname: localhost
-
-    client:
-        service-url:
-            defaultZone: http://localhost:8761/eureka/
